@@ -1,0 +1,51 @@
+{
+  "tetris": {
+    "scores": [
+      {
+        "score": "990",
+        "game": "tetris",
+        "name": "andre balada"
+      },
+      {
+        "score": "990",
+        "game": "tetris",
+        "name": "sobrancela cansado"
+      },
+      {
+        "score": "900",
+        "game": "tetris",
+        "name": "jp Desconforto Muscular"
+      },
+      {
+        "score": "100",
+        "game": "tetris",
+        "name": "lucas lixo"
+      },
+      {
+        "name": "Capitão Tired Horse",
+        "email": "sobrancela@cansado.com",
+        "score": "0",
+        "game": "tetris"
+      }
+    ]
+  },
+  "space": {
+    "scores": [
+      {
+        "score": "552",
+        "game": "space",
+        "name": "Kotoco"
+      },
+      {
+        "score": "300",
+        "game": "space",
+        "name": "Water Box"
+      },
+      {
+        "score": "0",
+        "game": "space",
+        "name": "Molok"
+      }
+    ]
+  }
+}

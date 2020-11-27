@@ -1,0 +1,9 @@
+section {
+  height: calc(97vh);
+  /* - Height: calc(100vh - (navheight + footer))
+     - Over flow y make the dive scrollable 
+  when it exceed the fixed height*/
+  overflow-y: auto;
+  transition: all 0.5s;
+  background-image: url(../assets/main_background.png);
+}

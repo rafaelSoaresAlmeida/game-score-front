@@ -1,0 +1,5 @@
+.footer {
+  height: 9vh;
+  /*Or fixed pixel unit*/
+  background-color: black;
+}

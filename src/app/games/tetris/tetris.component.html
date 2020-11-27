@@ -1,0 +1,23 @@
+<br />
+<br />
+<br />
+<br />
+<div
+  class="grid"
+  style="background-image: url(../../assets/tetris.jpg); background-size: 100%"
+>
+  <canvas #tetrisBoard class="game-board"></canvas>
+  <div class="right-column">
+    <div>
+      <h1 style="color: red">TETRIS</h1>
+      <p style="color: red">Score: {{ points }}</p>
+      <p style="color: red">Lines: {{ lines }}</p>
+      <p style="color: red">Level: {{ level }}</p>
+      <p style="color: red">High Score:</p>
+      <!-- <p>{{ highScore }}</p> -->
+      <p style="color: red">Next Block:</p>
+      <canvas #next class="next"></canvas>
+    </div>
+    <button (click)="play()" class="play-button">Play</button>
+  </div>
+</div>
