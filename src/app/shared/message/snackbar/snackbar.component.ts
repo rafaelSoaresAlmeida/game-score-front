@@ -46,10 +46,10 @@ export class SnackbarComponent implements OnInit {
     this.notificationService.notifier
       .pipe(
         tap((message) => {
-          this.message = message;
+          this.message = message.message;
           this.snackVisibility = 'visible';
         }),
-        switchMap((message) => timer(3000))
+        switchMap((message) => timer(message.timer))
       )
       .subscribe((timer) => (this.snackVisibility = 'hidden'));
   }

@@ -1,3 +1,4 @@
+import { stringify } from 'querystring';
 import { Enemy } from '../games/space-invaders/actor/Enemy';
 
 // Adapted from: http://stackoverflow.com/questions/563198/how-do-you-detect-where-two-line-segments-intersect/1968345#1968345
@@ -64,4 +65,25 @@ export function buildScoreObject(
     score: score,
     game: userGame,
   };
+}
+
+export function buildMessageObject(message: string, timer: number) {
+  return {
+    message: message,
+    timer: timer,
+  };
+}
+
+export function converToOrdinalNum(number: number) {
+  let selector: number;
+
+  if (number <= 0) {
+    selector = 4;
+  } else if ((number > 3 && number < 21) || number % 10 > 3) {
+    selector = 0;
+  } else {
+    selector = number % 10;
+  }
+
+  return number + ['th', 'st', 'nd', 'rd', ''][selector];
 }

@@ -17,7 +17,7 @@ server.use(jsonServer.bodyParser);
 server.post('/user/login', handleAuthentication);
 server.post('/score', function (req, resp) {
   handleAuthorization(req, resp);
-  resp.json({ raked: true, position: 2 });
+  resp.json({ ranked: true, position: 2 });
 });
 
 server.get('/score/:game', function (req, res) {

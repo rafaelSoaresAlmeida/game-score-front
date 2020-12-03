@@ -18,6 +18,7 @@ import { RankService } from '../rank.service';
 import { Score } from '../score.model';
 import { LoginService } from 'src/app/security/login.service';
 import { buildScoreObject } from '../../utils/gameUtils';
+import { NotificationService } from 'src/app/shared/message/notification.service';
 
 @Component({
   selector: 'app-space-invaders',
@@ -64,7 +65,8 @@ export class SpaceInvadersComponent implements OnInit {
 
   constructor(
     private rankService: RankService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit(): void {
@@ -122,10 +124,9 @@ export class SpaceInvadersComponent implements OnInit {
       this.score.toString(),
       'space'
     );
-    console.log(this.score);
-    this.rankService
-      .persistScore(this.scoreObj)
-      .subscribe((response) => console.log(response));
+    this.rankService.persistScore(this.scoreObj).subscribe((response) => {
+      this.notificationService.notifyRanking(response);
+    });
   }
 
   gameLoop = () => {

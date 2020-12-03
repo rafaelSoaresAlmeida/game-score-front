@@ -21,6 +21,7 @@ import { RankService } from '../rank.service';
 import { Score } from '../score.model';
 import { LoginService } from 'src/app/security/login.service';
 import { buildScoreObject } from '../../utils/gameUtils';
+import { NotificationService } from 'src/app/shared/message/notification.service';
 
 @Component({
   selector: 'app-tetris',
@@ -78,7 +79,8 @@ export class TetrisComponent implements OnInit {
   constructor(
     private service: GameService,
     private rankService: RankService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit() {
@@ -222,10 +224,11 @@ export class TetrisComponent implements OnInit {
       this.lines.toString(),
       'tetris'
     );
-    console.log(this.score);
     this.rankService
       .persistScore(this.score)
-      .subscribe((response) => console.log(response));
+      .subscribe((response) =>
+        this.notificationService.notifyRanking(response)
+      );
   }
 
   getEmptyBoard(): number[][] {

@@ -15,7 +15,7 @@ exports.handleAuthentication = function (req, resp) {
         });
     }
     else {
-        resp.status(403).json({ message: 'Dádos inválidos.' });
+        resp.status(403).json({ message: 'Invalid user or password.' });
     }
     function isValid(user) {
         if (!user) {

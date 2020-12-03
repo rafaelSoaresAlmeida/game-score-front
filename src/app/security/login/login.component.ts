@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
       .subscribe(
         () =>
           this.notificationService.notify(
-            `Welcome, ${this.loginService.user.name}`
+            `Welcome, ${this.loginService.user.name}`,
+            4000
           ),
         (errorResponse) =>
           this.errorHandlerResponseService.handleError(errorResponse),

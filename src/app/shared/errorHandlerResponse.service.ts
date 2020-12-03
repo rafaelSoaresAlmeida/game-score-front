@@ -20,11 +20,11 @@ export class ErrorHandlerResponseService {
           break;
 
         case 403:
-          this.notificationService.notify(message || 'Not authorized .');
+          this.notificationService.notify(message || 'Not authorized .', 3000);
           break;
 
         case 404:
-          this.notificationService.notify(message || 'Source not found.');
+          this.notificationService.notify(message || 'Source not found.', 3000);
           break;
       }
     }

@@ -12,7 +12,7 @@ server.use(jsonServer.bodyParser);
 server.post('/user/login', auth_1.handleAuthentication);
 server.post('/score', function (req, resp) {
     authz_1.handleAuthorization(req, resp);
-    resp.json({ raked: true, position: 2 });
+    resp.json({ ranked: true, position: 2 });
 });
 server.get('/score/:game', function (req, res) {
     var game = req.param('game');
