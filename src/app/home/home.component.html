@@ -4,7 +4,7 @@
 <br />
 
 <div class="jumbotron bg-dark">
-  <h1 style="color: crimson">Best Scores</h1>
+  <h1 style="color: crimson">Top five Scores</h1>
   <p class="lead" style="color: #ffffff">Get your best score!!</p>
 
   <p-table [value]="spaceInvadersScores" styleClass="p-datatable-gridlines">
@@ -18,7 +18,7 @@
     </ng-template>
     <ng-template pTemplate="body" let-spaceScore let-i="rowIndex">
       <tr>
-        <td>{{ i + 1 }}</td>
+        <td>{{ convertNumber(i + 1) }}</td>
         <td>{{ spaceScore.name }}</td>
         <td>{{ spaceScore.score }}</td>
       </tr>
@@ -38,7 +38,7 @@
     </ng-template>
     <ng-template pTemplate="body" let-tetrisScore let-i="rowIndex">
       <tr>
-        <td>{{ i + 1 }}</td>
+        <td>{{ convertNumber(i + 1) }}</td>
         <td>{{ tetrisScore.name }}</td>
         <td>{{ tetrisScore.score }}</td>
       </tr>

@@ -44,11 +44,17 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contact-create">About</a>
+        <a class="nav-link" routerLink="/about">About</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <span class="navbar-text" *ngIf="userName"> {{ userName }} </span>
+    </form>
+
+    <form class="form-inline my-2 my-lg-0">
+      <a class="nav-link" *ngIf="userName" href="#" (click)="userLogout()"
+        >Logout</a
+      >
     </form>
   </div>
 </nav>

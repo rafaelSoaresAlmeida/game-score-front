@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RankService } from '../games/rank.service';
+import { converToOrdinalNum } from '../utils/gameUtils';
 import { Score } from '../games/score.model';
 
 @Component({
@@ -27,5 +28,9 @@ export class HomeComponent implements OnInit {
     this.rankService
       .getScore(this.TETRIS_SCORE)
       .subscribe((resp) => (this.tetrisScores = resp[Object.keys(resp)[0]]));
+  }
+
+  convertNumber(number: number) {
+    return converToOrdinalNum(number);
   }
 }
