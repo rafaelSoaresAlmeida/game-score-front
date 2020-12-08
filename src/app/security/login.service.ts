@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap, filter } from 'rxjs/operators';
@@ -6,6 +6,7 @@ import { User } from './user.model';
 import { NavigationEnd, Router } from '@angular/router';
 import { SCORE_API } from '../app.api';
 import { NotificationService } from '../shared/message/notification.service';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable()
 export class LoginService {
@@ -16,7 +17,8 @@ export class LoginService {
   constructor(
     private httpClient: HttpClient,
     private router: Router,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    @Inject(DOCUMENT) private _document: Document
   ) {
     this.router.events
       .pipe(filter((e) => e instanceof NavigationEnd))
@@ -52,5 +54,7 @@ export class LoginService {
 
   logout() {
     this.user = undefined;
+    this.router.navigateByUrl('/#');
+    this._document.defaultView.location.reload();
   }
 }

@@ -7,7 +7,7 @@ import { LoginComponent } from './security/login/login.component';
 import { LoginActivate } from './security/logginActivate';
 
 export const ROUTES: Routes = [
-  { path: '', component: HomeComponent, canActivate: [LoginActivate] },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'login/:to', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [LoginActivate] },

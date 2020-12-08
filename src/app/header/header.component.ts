@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoginService } from '../security/login.service';
+import { DialogConfirmationService } from '../shared/message/dialog-confirmation/dialog-confirmation.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userName: string;
   subscriptionName: Subscription;
 
-  constructor(private loginService: LoginService) {}
+  constructor(
+    private loginService: LoginService,
+    private dialogConfirmationService: DialogConfirmationService
+  ) {}
 
   ngOnInit() {
     this.subscriptionName = this.loginService.userNameEvent$.subscribe(
@@ -25,7 +29,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.subscriptionName.unsubscribe();
   }
 
-  userLogout() {
-    this.loginService.logout();
+  public openConfirmationDialog() {
+    this.dialogConfirmationService
+      .confirm('Please confirm..', 'Are you sure you want to end the session?')
+      .then((confirmed) => {
+        if (confirmed === true) {
+          this.loginService.logout();
+        }
+      })
+      .catch(() =>
+        console.log(
+          'User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'
+        )
+      );
   }
 }

@@ -48,11 +48,14 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <span class="navbar-text" *ngIf="userName"> {{ userName }} </span>
+      <span class="navbar-text"> {{ userName }} </span>
     </form>
 
-    <form class="form-inline my-2 my-lg-0">
-      <a class="nav-link" *ngIf="userName" href="#" (click)="userLogout()"
+    <form class="form-inline my-2 my-lg-0" *ngIf="userName">
+      <a
+        class="nav-link"
+        href="javascript:void(0);"
+        (click)="openConfirmationDialog()"
         >Logout</a
       >
     </form>

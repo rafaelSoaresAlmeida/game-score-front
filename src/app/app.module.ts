@@ -25,6 +25,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SnackbarComponent } from './shared/message/snackbar/snackbar.component';
 import { NotificationService } from './shared/message/notification.service';
 import { ErrorHandlerResponseService } from './shared/errorHandlerResponse.service';
+import { DialogConfirmationComponent } from './shared/message/dialog-confirmation/dialog-confirmation.component';
+import { ModalModule } from 'ngb-modal';
+import { DialogConfirmationService } from './shared/message/dialog-confirmation/dialog-confirmation.service';
 
 @NgModule({
   declarations: [
@@ -37,22 +40,25 @@ import { ErrorHandlerResponseService } from './shared/errorHandlerResponse.servi
     LoginComponent,
     ScoreGridComponent,
     SnackbarComponent,
+    DialogConfirmationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(ROUTES),
+    RouterModule.forRoot(ROUTES, { onSameUrlNavigation: 'ignore' }),
     HomeModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ModalModule,
   ],
   providers: [
     LoginService,
     LoginActivate,
     RankService,
     NotificationService,
+    DialogConfirmationService,
     ErrorHandlerResponseService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
