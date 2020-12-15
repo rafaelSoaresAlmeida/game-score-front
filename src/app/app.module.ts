@@ -28,6 +28,7 @@ import { ErrorHandlerResponseService } from './shared/errorHandlerResponse.servi
 import { DialogConfirmationComponent } from './shared/message/dialog-confirmation/dialog-confirmation.component';
 import { ModalModule } from 'ngb-modal';
 import { DialogConfirmationService } from './shared/message/dialog-confirmation/dialog-confirmation.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { DialogConfirmationService } from './shared/message/dialog-confirmation/
     HttpClientModule,
     BrowserAnimationsModule,
     ModalModule,
+    NgbModule,
   ],
   providers: [
     LoginService,

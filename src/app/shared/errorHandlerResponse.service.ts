@@ -12,7 +12,7 @@ export class ErrorHandlerResponseService {
 
   handleError(errorResponse: HttpErrorResponse | any) {
     if (errorResponse instanceof HttpErrorResponse) {
-      const message = errorResponse.error.message;
+      const message = errorResponse.error.error;
 
       switch (errorResponse.status) {
         case 401:
@@ -20,6 +20,7 @@ export class ErrorHandlerResponseService {
           break;
 
         case 403:
+          console.log(message)
           this.notificationService.notify(message || 'Not authorized .', 3000);
           break;
 
