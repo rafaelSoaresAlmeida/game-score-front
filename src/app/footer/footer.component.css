@@ -1,5 +1,9 @@
 .footer {
-  height: 9vh;
   /*Or fixed pixel unit*/
-  background-color: black;
+  background-color: #33393f;
+}
+
+.spanText {
+  /*Or fixed pixel unit*/
+  color: blanchedalmond;
 }
