@@ -1,0 +1,31 @@
+{
+  "flappyBirdPack": {
+    "files": [
+      {
+        "type": "bitmapFont",
+        "key": "font",
+        "textureURL": "assets/flappy/font/font.png",
+        "fontDataURL": "assets/flappy/font/font.fnt"
+      },
+      {
+        "type": "image",
+        "key": "background",
+        "url": "assets/flappy/images/bg.png"
+      },
+      {
+        "type": "image",
+        "key": "bird",
+        "url": "assets/flappy/images/bird.png"
+      },
+      {
+        "type": "spritesheet",
+        "key": "pipe",
+        "url": "assets/flappy/images/pipe.png",
+        "frameConfig": {
+          "frameWidth": 20,
+          "frameHeight": 20
+        }
+      }
+    ]
+  }
+}

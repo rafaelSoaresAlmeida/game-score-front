@@ -1,7 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import { Message } from './message.model';
 import { buildMessageObject } from '../../utils/gameUtils';
-import { converToOrdinalNum } from '../../utils/gameUtils';
 
 export class NotificationService {
   notifier = new EventEmitter<any>();
@@ -13,7 +12,7 @@ export class NotificationService {
   }
 
   notifyRanking(backendResponse) {
-
+    console.log("Avisandoooooooooo " + backendResponse);
     this.message = buildMessageObject(
       backendResponse.message, 7000
     );

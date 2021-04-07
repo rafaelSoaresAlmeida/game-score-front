@@ -33,7 +33,6 @@ export class LoginService {
       })
       .pipe(
         tap((resp) => {
-          console.log(resp),
             (this.user = {
               name: resp.user.name,
               email: resp.user.email,
