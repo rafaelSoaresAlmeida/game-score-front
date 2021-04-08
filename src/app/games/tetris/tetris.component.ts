@@ -14,6 +14,7 @@ import {
   LEVEL,
   POINTS,
   KEY,
+  Games,
 } from '../../utils/constants';
 import { Piece, IPiece } from './piece.component';
 import { GameService } from './game.service';
@@ -222,7 +223,7 @@ export class TetrisComponent implements OnInit {
       this.loginService.user.name,
       this.loginService.user.email,
       this.lines.toString(),
-      'tetris'
+      Games.TETRIS_SCORE
     );
     this.rankService
       .persistScore(this.score)

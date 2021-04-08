@@ -6,6 +6,7 @@ import { LoginService } from "src/app/security/login.service";
 import { buildScoreObject } from "src/app/utils/gameUtils";
 import { NotificationService } from "src/app/shared/message/notification.service";
 import { ServiceLocator } from "src/app/service.locator";
+import { Games } from "src/app/utils/constants";
 
 export class FlappyBirdGame extends Phaser.Scene {
 
@@ -137,7 +138,7 @@ export class FlappyBirdGame extends Phaser.Scene {
           this.loginService.user.name,
           this.loginService.user.email,
           this.registry.values.score.toString(),
-          'flappy'
+          Games.FLAPPY_BIRD
         );
 
         this.rankService.persistScore(scoreObj).subscribe((response) => {

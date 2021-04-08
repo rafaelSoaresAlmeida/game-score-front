@@ -44,4 +44,23 @@
       </tr>
     </ng-template>
   </p-table>
+
+  <p-table [value]="flappyBirdScores" styleClass="p-datatable-gridlines">
+    <ng-template pTemplate="caption"> Flappy Bird </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-flappyBirdScore let-i="rowIndex">
+      <tr>
+        <td>{{ convertNumber(i + 1) }}</td>
+        <td>{{ flappyBirdScore.name }}</td>
+        <td>{{ flappyBirdScore.score }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
 </div>

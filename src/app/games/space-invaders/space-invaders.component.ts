@@ -11,7 +11,7 @@ import { Bullet } from '../space-invaders/actor/Bullet';
 import { Enemy } from '../space-invaders/actor/Enemy';
 import { ParticalCluster } from '../space-invaders/actor/ParticalCluster';
 
-import { KEY } from '../../utils/constants';
+import { Games, KEY } from '../../utils/constants';
 
 import { spawnSquadOfEnemies } from '../../utils/gameUtils';
 import { RankService } from '../rank.service';
@@ -122,7 +122,7 @@ export class SpaceInvadersComponent implements OnInit {
       this.loginService.user.name,
       this.loginService.user.email,
       this.score.toString(),
-      'space'
+      Games.SPACE_INVADERS_SCORE
     );
     this.rankService.persistScore(this.scoreObj).subscribe((response) => {
       this.notificationService.notifyRanking(response);

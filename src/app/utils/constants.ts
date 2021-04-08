@@ -105,3 +105,9 @@ export class LEVEL {
   static readonly 20 = 30;
   // 29+ is 20ms
 }
+
+export class Games {
+  static readonly TETRIS_SCORE = 'tetris';
+  static readonly SPACE_INVADERS_SCORE ='space';
+  static readonly FLAPPY_BIRD = 'flappy';
+}

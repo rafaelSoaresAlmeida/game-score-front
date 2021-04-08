@@ -30,7 +30,6 @@ import { ModalModule } from 'ngb-modal';
 import { DialogConfirmationService } from './shared/message/dialog-confirmation/dialog-confirmation.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlappyBirdComponent } from './games/flappy-bird/flappy-bird.component';
-import { FlappyBirdGame } from './games/flappy-bird/scenes/flappy-bird.game';
 import { Injector } from '@angular/core';
 import { ServiceLocator } from './service.locator';
 
