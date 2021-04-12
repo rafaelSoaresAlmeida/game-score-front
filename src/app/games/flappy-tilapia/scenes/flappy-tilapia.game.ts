@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import { Bird } from "../objects/bird";
+import { Tilapia } from "../objects/tilapia";
 import { Pipe } from "../objects/pipe";
 import { RankService } from "../../rank.service";
 import { LoginService } from "src/app/security/login.service";
@@ -8,9 +8,9 @@ import { NotificationService } from "src/app/shared/message/notification.service
 import { ServiceLocator } from "src/app/service.locator";
 import { Games } from "src/app/utils/constants";
 
-export class FlappyBirdGame extends Phaser.Scene {
+export class FlappyTilapiaGame extends Phaser.Scene {
 
-    private bird!: Bird;
+    private tilapia!: Tilapia;
     private pipes!: Phaser.GameObjects.Group;
     private background!: Phaser.GameObjects.TileSprite;
     private scoreText!: Phaser.GameObjects.BitmapText;
@@ -19,7 +19,7 @@ export class FlappyBirdGame extends Phaser.Scene {
     private notificationService: NotificationService = ServiceLocator.injector.get(NotificationService);
 
     constructor() {
-      super('FlappyBirdGame');
+      super('FlappyTilapiaGame');
     }
 
     init(): void {
@@ -28,9 +28,9 @@ export class FlappyBirdGame extends Phaser.Scene {
     
       preload(): void {
         this.load.pack(
-          "flappyBirdPack",
+          "flappyTilapiaPack",
           "assets/flappy/pack.json",
-          "flappyBirdPack"
+          "flappyTilapiaPack"
         );
       }
     
@@ -50,11 +50,11 @@ export class FlappyBirdGame extends Phaser.Scene {
 
         this.pipes = this.add.group({ classType: Pipe });
     
-        this.bird = new Bird({
+        this.tilapia = new Tilapia({
           scene: this,
           x: 50,
           y: 100,
-          key: "bird"
+          key: "tilapia"
         });
     
         this.addNewRowOfPipes();
@@ -69,14 +69,14 @@ export class FlappyBirdGame extends Phaser.Scene {
     
       update(): void {
 
-        if (!this.bird.getDead()) {
+        if (!this.tilapia.getDead()) {
           this.background.tilePositionX += 4;
-          this.bird.update();
+          this.tilapia.update();
           this.physics.overlap(
-            this.bird,
+            this.tilapia,
             this.pipes,
             () => {
-              this.bird.setDead(true);
+              this.tilapia.setDead(true);
             },
             undefined,
             this
@@ -91,9 +91,9 @@ export class FlappyBirdGame extends Phaser.Scene {
             this
           );
     
-          if (this.bird.y > this.sys.canvas.height) {
+          if (this.tilapia.y > this.sys.canvas.height) {
               this.persistScore();
-              this.scene.start('flappy-bird-game-over', {score: this.registry.values.score, scene: this.scene}); 
+              this.scene.start('flappy-tilapia-game-over', {score: this.registry.values.score}); 
           }
         }
       }
@@ -134,15 +134,19 @@ export class FlappyBirdGame extends Phaser.Scene {
       }
 
       private persistScore(): void {
-        var scoreObj = buildScoreObject(
-          this.loginService.user.name,
-          this.loginService.user.email,
-          this.registry.values.score.toString(),
-          Games.FLAPPY_BIRD
-        );
+        
+        if(this.registry.values.score > 0 && this.loginService.user){
+          var scoreObj = buildScoreObject(
+            this.loginService.user.name,
+            this.loginService.user.email,
+            this.registry.values.score.toString(),
+            Games.FLAPPY_TILAPIA
+          );
+  
+          this.rankService.persistScore(scoreObj).subscribe((response) => {
+            this.notificationService.notifyRanking(response);
+          });  
+        } 
 
-        this.rankService.persistScore(scoreObj).subscribe((response) => {
-          this.notificationService.notifyRanking(response);
-        });  
       }
 }

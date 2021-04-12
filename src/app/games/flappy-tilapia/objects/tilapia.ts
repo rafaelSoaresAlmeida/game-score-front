@@ -1,4 +1,4 @@
-export class Bird extends Phaser.GameObjects.Sprite {
+export class Tilapia extends Phaser.GameObjects.Sprite {
   body!: Phaser.Physics.Arcade.Body
   private jumpKey: Phaser.Input.Keyboard.Key;
   private isDead: boolean;

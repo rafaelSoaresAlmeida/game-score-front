@@ -1,9 +1,9 @@
 import * as Phaser from "phaser";
-import FlappyBirdGameOver from "./scenes/flappy-bird.game-over";
-import { FlappyBirdGame} from "./scenes/flappy-bird.game";
-import FlappyBirdStartGame from "./scenes/flappy-bird.start-game";
+import FlappyTilapiaGameOver from "./scenes/flappy-tilapia.game-over";
+import { FlappyTilapiaGame} from "./scenes/flappy-tilapia.game";
+import FlappyTilapiaStartGame from "./scenes/flappy-tilapia.start-game";
 
-export class FlappyBirdConfig extends Phaser.Scene{
+export class FlappyTilapiaConfig extends Phaser.Scene{
 
     public static readonly sceneConfig: Phaser.Types.Core.GameConfig = {
         width: 400,
@@ -19,7 +19,7 @@ export class FlappyBirdConfig extends Phaser.Scene{
           }
         },
         render: { pixelArt: true },
-        scene: [FlappyBirdStartGame, FlappyBirdGame, FlappyBirdGameOver]
+        scene: [FlappyTilapiaStartGame, FlappyTilapiaGame, FlappyTilapiaGameOver]
     }
     
 }

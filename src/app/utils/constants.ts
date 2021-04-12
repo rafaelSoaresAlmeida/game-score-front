@@ -109,5 +109,5 @@ export class LEVEL {
 export class Games {
   static readonly TETRIS_SCORE = 'tetris';
   static readonly SPACE_INVADERS_SCORE ='space';
-  static readonly FLAPPY_BIRD = 'flappy';
+  static readonly FLAPPY_TILAPIA = 'flappy';
 }

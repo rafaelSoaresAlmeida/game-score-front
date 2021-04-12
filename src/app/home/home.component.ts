@@ -11,7 +11,7 @@ import { Games } from '../utils/constants';
 export class HomeComponent implements OnInit {
   public spaceInvadersScores = [];
   public tetrisScores = [];
-  public flappyBirdScores = [];
+  public flappyTilapiaScores = [];
   public head: string[] = ['name', 'score'];
 
   constructor(private rankService: RankService) {}
@@ -28,8 +28,8 @@ export class HomeComponent implements OnInit {
       .subscribe((resp) => (this.tetrisScores = resp[Object.keys(resp)[0]]));
 
     this.rankService
-    .getScore(Games.FLAPPY_BIRD)
-    .subscribe((resp) => (this.flappyBirdScores = resp[Object.keys(resp)[0]]));
+    .getScore(Games.FLAPPY_TILAPIA)
+    .subscribe((resp) => (this.flappyTilapiaScores = resp[Object.keys(resp)[0]]));
   }
 
   public convertNumber(number: number) {

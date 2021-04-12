@@ -1,20 +1,20 @@
-export default class FlappyBirdStartGame extends Phaser.Scene {
+export default class FlappyTilapiaStartGame extends Phaser.Scene {
 
     private clickButton: any;
     private background!: Phaser.GameObjects.TileSprite;
 
     preload(): void {
         this.load.pack(
-            "flappyBirdPack",
+            "flappyTilapiadPack",
             "assets/flappy/pack.json",
-            "flappyBirdPack"
+            "flappyTilapiaPack"
         );
     }
   
     create(): void {
 
         this.background = this.add
-          .tileSprite(0, 0, 390, 600, "background")
+          .tileSprite(0, 0, 390, 600, "startBackground")
           .setOrigin(0, 0);
 
         const screenCenterX = this.cameras.main.worldView.x + this.cameras.main.width / 2;
@@ -30,7 +30,9 @@ export default class FlappyBirdStartGame extends Phaser.Scene {
     }
 
     startGame(): void {
-        this.scene.start('FlappyBirdGame');
+        this.scene.stop('flappy-tilapia-game-over');
+        this.scene.stop('FlappyTilapiaStartGame');
+        this.scene.start('FlappyTilapiaGame');
     }
     
     enterButtonHoverState(): void {

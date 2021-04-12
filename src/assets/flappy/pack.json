@@ -1,5 +1,5 @@
 {
-  "flappyBirdPack": {
+  "flappyTilapiaPack": {
     "files": [
       {
         "type": "bitmapFont",
@@ -14,8 +14,18 @@
       },
       {
         "type": "image",
-        "key": "bird",
-        "url": "assets/flappy/images/bird.png"
+        "key": "startBackground",
+        "url": "assets/flappy/images/bg-start-game.png"
+      },
+      {
+        "type": "image",
+        "key": "gameOverBackground",
+        "url": "assets/flappy/images/bg-game-over.png"
+      },
+      {
+        "type": "image",
+        "key": "tilapia",
+        "url": "assets/flappy/images/tilapia.png"
       },
       {
         "type": "spritesheet",

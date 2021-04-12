@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlappyBirdComponent } from './flappy-bird.component';
+import { FlappyTilapiaComponent } from './flappy-tilapia.component';
 
-describe('FlappyBirdComponent', () => {
-  let component: FlappyBirdComponent;
-  let fixture: ComponentFixture<FlappyBirdComponent>;
+describe('FlappyTilapiaComponent', () => {
+  let component: FlappyTilapiaComponent;
+  let fixture: ComponentFixture<FlappyTilapiaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FlappyBirdComponent ]
+      declarations: [ FlappyTilapiaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FlappyBirdComponent);
+    fixture = TestBed.createComponent(FlappyTilapiaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
