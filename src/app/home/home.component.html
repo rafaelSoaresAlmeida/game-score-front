@@ -7,6 +7,46 @@
   <h1 style="color: crimson">Top five Scores</h1>
   <p class="lead" style="color: #ffffff">Get your best score!!</p>
 
+  <p-table [value]="dinoScores" styleClass="p-datatable-gridlines">
+    <ng-template pTemplate="caption"> Dino </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-dinoScore let-i="rowIndex">
+      <tr>
+        <td>{{ convertNumber(i + 1) }}</td>
+        <td>{{ dinoScore.name }}</td>
+        <td>{{ dinoScore.score }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  
+  <br />
+
+  <p-table [value]="flappyTilapiaScores" styleClass="p-datatable-gridlines">
+    <ng-template pTemplate="caption"> Flappy Tilapia </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-flappyTilapiaScore let-i="rowIndex">
+      <tr>
+        <td>{{ convertNumber(i + 1) }}</td>
+        <td>{{ flappyTilapiaScore.name }}</td>
+        <td>{{ flappyTilapiaScore.score }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <br />
+
   <p-table [value]="spaceInvadersScores" styleClass="p-datatable-gridlines">
     <ng-template pTemplate="caption"> Generic Space Invaders</ng-template>
     <ng-template pTemplate="header">
@@ -41,24 +81,6 @@
         <td>{{ convertNumber(i + 1) }}</td>
         <td>{{ tetrisScore.name }}</td>
         <td>{{ tetrisScore.score }}</td>
-      </tr>
-    </ng-template>
-  </p-table>
-
-  <p-table [value]="flappyTilapiaScores" styleClass="p-datatable-gridlines">
-    <ng-template pTemplate="caption"> Flappy Tilapia </ng-template>
-    <ng-template pTemplate="header">
-      <tr>
-        <th>Position</th>
-        <th>Name</th>
-        <th>Score</th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-flappyTilapiaScore let-i="rowIndex">
-      <tr>
-        <td>{{ convertNumber(i + 1) }}</td>
-        <td>{{ flappyTilapiaScore.name }}</td>
-        <td>{{ flappyTilapiaScore.score }}</td>
       </tr>
     </ng-template>
   </p-table>

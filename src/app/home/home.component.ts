@@ -12,24 +12,32 @@ export class HomeComponent implements OnInit {
   public spaceInvadersScores = [];
   public tetrisScores = [];
   public flappyTilapiaScores = [];
+  public dinoScores = [];
+
   public head: string[] = ['name', 'score'];
 
   constructor(private rankService: RankService) {}
 
   ngOnInit(): void {
     this.rankService
-      .getScore(Games.SPACE_INVADERS_SCORE)
+      .getScore(Games.SPACE_INVADERS)
       .subscribe(
         (resp) => (this.spaceInvadersScores = resp[Object.keys(resp)[0]])
       );
 
     this.rankService
-      .getScore(Games.TETRIS_SCORE)
+      .getScore(Games.TETRIS)
       .subscribe((resp) => (this.tetrisScores = resp[Object.keys(resp)[0]]));
 
     this.rankService
-    .getScore(Games.FLAPPY_TILAPIA)
-    .subscribe((resp) => (this.flappyTilapiaScores = resp[Object.keys(resp)[0]]));
+      .getScore(Games.FLAPPY_TILAPIA)
+      .subscribe(
+        (resp) => (this.flappyTilapiaScores = resp[Object.keys(resp)[0]])
+      );
+
+    this.rankService
+      .getScore(Games.DINO)
+      .subscribe((resp) => (this.dinoScores = resp[Object.keys(resp)[0]]));
   }
 
   public convertNumber(number: number) {

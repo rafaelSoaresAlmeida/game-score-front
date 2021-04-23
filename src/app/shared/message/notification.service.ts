@@ -12,10 +12,7 @@ export class NotificationService {
   }
 
   notifyRanking(backendResponse) {
-    console.log("Avisandoooooooooo " + backendResponse);
-    this.message = buildMessageObject(
-      backendResponse.message, 7000
-    );
+    this.message = buildMessageObject(backendResponse.message, 7000);
     this.notifier.emit(this.message);
   }
 }

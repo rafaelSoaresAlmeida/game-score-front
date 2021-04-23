@@ -122,7 +122,7 @@ export class SpaceInvadersComponent implements OnInit {
       this.loginService.user.name,
       this.loginService.user.email,
       this.score.toString(),
-      Games.SPACE_INVADERS_SCORE
+      Games.SPACE_INVADERS
     );
     this.rankService.persistScore(this.scoreObj).subscribe((response) => {
       this.notificationService.notifyRanking(response);

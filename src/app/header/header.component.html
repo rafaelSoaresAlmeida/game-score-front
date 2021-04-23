@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-  <a class="navbar-brand" href="#">Game Scores</a>
+  <a class="navbar-brand" style="color: crimson" >Game Scores</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -30,22 +30,20 @@
           Games
         </a>
         <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-          <a
-            class="dropdown-item"
-            routerLink="/spaceInvaders"
-            style="color: crimson"
-            >Space Invaders</a
-          >
-          <a class="dropdown-item" routerLink="/tetris" style="color: crimson"
-            >Tetris</a
+          
+          <a class="dropdown-item" routerLink="/dino" style="color: crimson"
+            >Dino</a
           >
 
           <a class="dropdown-item" routerLink="/flappyTilapia" style="color: crimson"
             >Flappy Tilapia</a
           >
-
-          <a class="dropdown-item" routerLink="/dino" style="color: crimson"
-            >Dino</a
+          
+          <a class="dropdown-item" routerLink="/spaceInvaders" style="color: crimson"
+            >Space Invaders</a
+          >
+          <a class="dropdown-item" routerLink="/tetris" style="color: crimson"
+            >Tetris</a
           >
 
           <div class="dropdown-divider"></div>
@@ -64,6 +62,7 @@
       <a
         class="nav-link"
         href="javascript:void(0);"
+        style="color: crimson"
         (click)="openConfirmationDialog()"
         >Logout</a
       >

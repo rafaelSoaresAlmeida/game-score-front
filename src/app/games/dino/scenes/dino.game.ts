@@ -101,7 +101,7 @@ export class DinoGame extends Phaser.Scene {
       this.dino,
       this.obsticles,
       () => {
-        //this.persistScore();
+        this.persistScore();
         this.scene.start('DinoGameOver', { score: this.registry.values.score });
       },
       undefined,
@@ -148,7 +148,7 @@ export class DinoGame extends Phaser.Scene {
         this.loginService.user.name,
         this.loginService.user.email,
         this.registry.values.score.toString(),
-        Games.FLAPPY_TILAPIA
+        Games.DINO
       );
 
       this.rankService.persistScore(scoreObj).subscribe((response) => {

@@ -223,7 +223,7 @@ export class TetrisComponent implements OnInit {
       this.loginService.user.name,
       this.loginService.user.email,
       this.lines.toString(),
-      Games.TETRIS_SCORE
+      Games.TETRIS
     );
     this.rankService
       .persistScore(this.score)
