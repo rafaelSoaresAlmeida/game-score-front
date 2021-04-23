@@ -4,8 +4,8 @@
       {
         "type": "bitmapFont",
         "key": "font",
-        "textureURL": "assets/flappy/font/font.png",
-        "fontDataURL": "assets/flappy/font/font.fnt"
+        "textureURL": "assets/shared/font/font.png",
+        "fontDataURL": "assets/shared/font/font.fnt"
       },
       {
         "type": "image",

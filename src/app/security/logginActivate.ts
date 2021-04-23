@@ -16,6 +16,7 @@ export class LoginActivate implements CanActivate {
 
   checkAuthentication(path: string): boolean {
     const loggedIn = this.loginService.isLoggedIn();
+
     if (!loggedIn) {
       this.loginService.handleLogin(`/${path}`);
     }

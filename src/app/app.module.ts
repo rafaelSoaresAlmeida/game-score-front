@@ -32,6 +32,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlappyTilapiaComponent } from './games/flappy-tilapia/flappy-tilapia.component';
 import { Injector } from '@angular/core';
 import { ServiceLocator } from './service.locator';
+import { DinoComponent } from './games/dino/dino.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ServiceLocator } from './service.locator';
     SnackbarComponent,
     DialogConfirmationComponent,
     FlappyTilapiaComponent,
+    DinoComponent,
   ],
   imports: [
     BrowserModule,
